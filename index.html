@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hussien Mohamed Hussien — Front-End Developer & AI Enthusiast. Explore projects, skills, experience, and services." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>Hussien Mohamed Hussien | Front-End Developer & AI Enthusiast</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-hidden="true">
+    <div class="loader-ring"></div>
+    <span>HMH</span>
+  </div>
+
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-wrap">
+      <a href="#home" class="brand" aria-label="Hussien Mohamed Hussien home">
+        <span class="brand-mark">H</span>
+        <span class="brand-text">Hussien<span>.</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#home" data-i18n="nav.home">Home</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#services" data-i18n="nav.services">Services</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-label">AR</span>
+        </button>
+        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Switch theme">
+          <i class="fa-solid fa-sun"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            <span data-i18n="hero.availability">Available for opportunities</span>
+          </div>
+
+          <p class="hero-kicker" data-i18n="hero.kicker">Hello, I’m Hussien Mohamed Hussien</p>
+
+          <h1>
+            <span data-i18n="hero.title1">Building modern</span>
+            <span class="gradient-text" data-i18n="hero.title2">web experiences.</span>
+          </h1>
+
+          <p class="hero-description" data-i18n="hero.description">
+            I’m a Front-End Developer and AI student who turns ideas into modern, responsive,
+            user-friendly websites while exploring the future of AI.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">
+              <span data-i18n="hero.viewProjects">View Projects</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a class="btn btn-secondary" href="assets/Hussien-CV.pdf" download>
+              <i class="fa-solid fa-download"></i>
+              <span data-i18n="hero.downloadCv">Download CV</span>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <a href="mailto:hussienmoh212@gmail.com"><i class="fa-regular fa-envelope"></i> hussienmoh212@gmail.com</a>
+            <span class="meta-separator"></span>
+            <span><i class="fa-solid fa-location-dot"></i> <span data-i18n="hero.location">Egypt</span></span>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="hero-orbit orbit-one"></div>
+          <div class="hero-orbit orbit-two"></div>
+          <div class="hero-orbit orbit-three"></div>
+          <div class="hero-core">
+            <div class="core-glow"></div>
+            <div class="initials">HM</div>
+            <div class="core-label">FRONT-END<br>& AI</div>
+          </div>
+          <div class="floating-card card-code">
+            <span class="mini-label">&lt;/&gt;</span>
+            <span>Clean Code</span>
+          </div>
+          <div class="floating-card card-responsive">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+            <span>Responsive</span>
+          </div>
+          <div class="floating-card card-ai">
+            <i class="fa-solid fa-brain"></i>
+            <span>AI Curious</span>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+        <span data-i18n="hero.scroll">Scroll to explore</span>
+        <i class="fa-solid fa-arrow-down"></i>
+      </a>
+    </section>
+
+    <section class="section section-muted" id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">01 /</p>
+          <div>
+            <p class="section-eyebrow" data-i18n="about.eyebrow">Get to know me</p>
+            <h2 data-i18n="about.title">About Me</h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p class="lead" data-i18n="about.lead">
+              I’m Hussien Mohamed Hussien, a Front-End Developer and Artificial Intelligence student at Alryada University.
+            </p>
+            <p data-i18n="about.p1">
+              I enjoy transforming ideas into modern, responsive, and user-friendly websites.
+              I’m currently expanding my knowledge of modern front-end technologies and AI,
+              with a long-term goal of becoming a successful developer who combines creativity,
+              technology, and problem-solving.
+            </p>
+            <p data-i18n="about.p2">
+              My practical background also includes software testing, technical support,
+              and front-end tasks, giving me a broader view of how digital products are built and improved.
+            </p>
+
+            <div class="about-pills">
+              <span>Creativity</span>
+              <span>Problem Solving</span>
+              <span>Continuous Learning</span>
+            </div>
+          </div>
+
+          <div class="about-stats reveal">
+            <article class="stat-card">
+              <span class="stat-number">2028</span>
+              <span class="stat-label" data-i18n="about.stat1">Expected graduation</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-number">01+</span>
+              <span class="stat-label" data-i18n="about.stat2">Real client project</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-number">4+</span>
+              <span class="stat-label" data-i18n="about.stat3">Years at Madinahitech</span>
+            </article>
+            <article class="stat-card">
+              <span class="stat-number">AI</span>
+              <span class="stat-label" data-i18n="about.stat4">Area of study</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="education-card reveal">
+          <div class="education-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div>
+            <span class="card-eyebrow" data-i18n="about.educationEyebrow">Education</span>
+            <h3 data-i18n="about.university">Alryada University</h3>
+            <p data-i18n="about.degree">Bachelor’s Degree — Faculty of Computer Science and Artificial Intelligence</p>
+            <span class="muted">2024 — Present · GPA 2.85 / 4.0</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">02 /</p>
+          <div>
+            <p class="section-eyebrow" data-i18n="skills.eyebrow">What I work with</p>
+            <h2 data-i18n="skills.title">Skills</h2>
+          </div>
+        </div>
+
+        <div class="skills-layout">
+          <div class="skill-groups">
+            <div class="skill-group reveal">
+              <div class="group-heading">
+                <span class="group-icon"><i class="fa-solid fa-code"></i></span>
+                <h3 data-i18n="skills.frontend">Front-End</h3>
+              </div>
+              <div class="skill-list">
+                <div class="skill-row" data-level="88">
+                  <div class="skill-top"><span>HTML5</span><span>Very Good</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="76">
+                  <div class="skill-top"><span>CSS3</span><span>Good</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="62">
+                  <div class="skill-top"><span>JavaScript</span><span>Intermediate</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="36">
+                  <div class="skill-top"><span>React.js</span><span>Beginner</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="72">
+                  <div class="skill-top"><span>Bootstrap</span><span>Working Knowledge</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="54">
+                  <div class="skill-top"><span>Tailwind CSS</span><span>Working Knowledge</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skill-group reveal">
+              <div class="group-heading">
+                <span class="group-icon"><i class="fa-solid fa-terminal"></i></span>
+                <h3 data-i18n="skills.programming">Programming</h3>
+              </div>
+              <div class="skill-list">
+                <div class="skill-row" data-level="62">
+                  <div class="skill-top"><span>C++</span><span>Intermediate</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="62">
+                  <div class="skill-top"><span>Java</span><span>Intermediate</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+                <div class="skill-row" data-level="48">
+                  <div class="skill-top"><span>Python</span><span>Working Knowledge</span></div>
+                  <div class="skill-bar"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="tools-panel reveal">
+            <div class="tools-orb"></div>
+            <p class="card-eyebrow" data-i18n="skills.toolsEyebrow">Tools & workflow</p>
+            <h3 data-i18n="skills.toolsTitle">Build. Test. Improve.</h3>
+            <p data-i18n="skills.toolsDescription">
+              I’m interested in the complete product cycle—from building interfaces
+              to testing behavior and improving the experience.
+            </p>
+            <div class="tool-tags">
+              <span><i class="fa-brands fa-git-alt"></i> Git</span>
+              <span><i class="fa-brands fa-github"></i> GitHub</span>
+              <span><i class="fa-solid fa-vial"></i> Testing</span>
+              <span><i class="fa-solid fa-mobile-screen"></i> Responsive UI</span>
+              <span><i class="fa-solid fa-palette"></i> UI Thinking</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">03 /</p>
+          <div>
+            <p class="section-eyebrow" data-i18n="experience.eyebrow">Where I’ve learned</p>
+            <h2 data-i18n="experience.title">Experience</h2>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date" data-i18n="experience.bayariqDate">June — July 2026</div>
+            <div class="timeline-card">
+              <div class="experience-top">
+                <div>
+                  <p class="card-eyebrow">Freelance</p>
+                  <h3>Front-End Developer</h3>
+                  <p class="company">Bayariq Al Nahda · Client Project</p>
+                </div>
+                <a class="circle-link" href="https://bayariqalnahda.com" target="_blank" rel="noreferrer" aria-label="Open Bayariq Al Nahda">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <p data-i18n="experience.bayariqDesc">
+                Independently designed and developed a complete business website for a Saudi-based company
+                using HTML5, CSS3, and JavaScript, with a responsive interface optimized for different screen sizes.
+              </p>
+              <div class="tech-tags">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date">DEPI</div>
+            <div class="timeline-card">
+              <div class="experience-top">
+                <div>
+                  <p class="card-eyebrow">Training</p>
+                  <h3>React Trainee</h3>
+                  <p class="company">Digital Egypt Pioneers Initiative</p>
+                </div>
+                <span class="experience-badge"><i class="fa-solid fa-layer-group"></i> React</span>
+              </div>
+              <p data-i18n="experience.depiDesc">
+                Building practical knowledge in React and modern front-end development through structured training.
+              </p>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-marker"></div>
+            <div class="timeline-date" data-i18n="experience.madinahitechDate">4+ years</div>
+            <div class="timeline-card">
+              <div class="experience-top">
+                <div>
+                  <p class="card-eyebrow">Madinahitech</p>
+                  <h3 data-i18n="experience.madinaTitle">Technical Support & Software Testing</h3>
+                  <p class="company">Private company</p>
+                </div>
+                <span class="experience-badge"><i class="fa-solid fa-screwdriver-wrench"></i> Support</span>
+              </div>
+              <p data-i18n="experience.madinaDesc">
+                Worked across technical support, software testing, and front-end related tasks,
+                gaining practical exposure to troubleshooting and product quality.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">04 /</p>
+          <div>
+            <p class="section-eyebrow" data-i18n="projects.eyebrow">Selected work</p>
+            <h2 data-i18n="projects.title">Projects</h2>
+          </div>
+        </div>
+
+        <div class="project-toolbar reveal">
+          <div class="filter-group" role="tablist" aria-label="Project filters">
+            <button class="filter-btn active" data-filter="all" data-i18n="projects.filterAll">All</button>
+            <button class="filter-btn" data-filter="frontend" data-i18n="projects.filterFrontend">Front-End</button>
+            <button class="filter-btn" data-filter="client" data-i18n="projects.filterClient">Client Work</button>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <article class="project-card featured reveal" data-category="frontend client">
+            <div class="project-preview">
+              <div class="browser-bar">
+                <span></span><span></span><span></span>
+                <small>bayariqalnahda.com</small>
+              </div>
+              <div class="mock-site">
+                <div class="mock-nav">
+                  <div class="mock-logo">BAYARIQ</div>
+                  <div class="mock-links"><span></span><span></span><span></span></div>
+                </div>
+                <div class="mock-hero">
+                  <div class="mock-copy">
+                    <small>BUSINESS SOLUTIONS</small>
+                    <strong>Build a better<br>digital presence.</strong>
+                    <div class="mock-btn"></div>
+                  </div>
+                  <div class="mock-shape"></div>
+                </div>
+                <div class="mock-bottom">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+              <div class="featured-label" data-i18n="projects.featured">Featured project</div>
+            </div>
+
+            <div class="project-info">
+              <div class="project-topline">
+                <div>
+                  <p class="card-eyebrow">Client Project</p>
+                  <h3>Bayariq Al Nahda</h3>
+                </div>
+                <a class="circle-link" href="https://bayariqalnahda.com" target="_blank" rel="noreferrer" aria-label="Open live website">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <p data-i18n="projects.bayariqDesc">
+                A complete responsive business website built independently from scratch
+                for a Saudi-based company, with a focus on clear content presentation and user-friendly navigation.
+              </p>
+              <div class="tech-tags">
+                <span>HTML5</span><span>CSS3</span><span>JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-category="frontend">
+            <div class="placeholder-project">
+              <span class="placeholder-icon"><i class="fa-solid fa-plus"></i></span>
+              <p class="card-eyebrow" data-i18n="projects.nextEyebrow">Next project</p>
+              <h3 data-i18n="projects.nextTitle">More work is coming.</h3>
+              <p data-i18n="projects.nextDesc">This space is reserved for upcoming front-end and AI projects.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="services">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="section-index">05 /</p>
+          <div>
+            <p class="section-eyebrow" data-i18n="services.eyebrow">How I can help</p>
+            <h2 data-i18n="services.title">Services</h2>
+          </div>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal">
+            <div class="service-number">01</div>
+            <div class="service-icon"><i class="fa-solid fa-window-maximize"></i></div>
+            <h3 data-i18n="services.s1">Landing Pages</h3>
+            <p data-i18n="services.s1d">Focused landing pages designed to present a product, service, or business clearly.</p>
+            <span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">02</div>
+            <div class="service-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+            <h3 data-i18n="services.s2">Responsive Websites</h3>
+            <p data-i18n="services.s2d">Interfaces that adapt smoothly across desktop, tablet, and mobile screens.</p>
+            <span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">03</div>
+            <div class="service-icon"><i class="fa-solid fa-code"></i></div>
+            <h3 data-i18n="services.s3">Front-End Development</h3>
+            <p data-i18n="services.s3d">Modern, interactive front-end interfaces built with clean and maintainable code.</p>
+            <span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">04</div>
+            <div class="service-icon"><i class="fa-solid fa-pen-ruler"></i></div>
+            <h3 data-i18n="services.s4">Website Redesign</h3>
+            <p data-i18n="services.s4d">Refreshing existing websites to improve appearance, usability, and responsiveness.</p>
+            <span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </article>
+
+          <article class="service-card reveal">
+            <div class="service-number">05</div>
+            <div class="service-icon"><i class="fa-solid fa-bug-slash"></i></div>
+            <h3 data-i18n="services.s5">Software Testing</h3>
+            <p data-i18n="services.s5d">Practical testing and issue reporting to help improve product quality and reliability.</p>
+            <span class="service-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-shell reveal">
+          <div class="contact-copy">
+            <p class="section-eyebrow" data-i18n="contact.eyebrow">Let’s work together</p>
+            <h2 data-i18n="contact.title">Have an idea?<br><span class="gradient-text">Let’s build it.</span></h2>
+            <p data-i18n="contact.description">
+              Whether it’s a landing page, responsive website, redesign, or testing task,
+              I’d be happy to hear about it.
+            </p>
+
+            <div class="socials">
+              <a href="mailto:hussienmoh212@gmail.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+              <a href="https://linkedin.com/in/hussien-mohamed8" target="_blank" rel="noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="https://www.instagram.com/_.7ussien._/" target="_blank" rel="noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.facebook.com/hussien.mohammed.233736" target="_blank" rel="noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="https://wa.me/201095899466" target="_blank" rel="noreferrer" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="form-grid">
+              <div class="field">
+                <label for="name" data-i18n="contact.name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" data-i18n-placeholder="contact.namePlaceholder" required />
+              </div>
+              <div class="field">
+                <label for="email" data-i18n="contact.email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label for="subject" data-i18n="contact.subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What would you like to build?" data-i18n-placeholder="contact.subjectPlaceholder" required />
+            </div>
+            <div class="field">
+              <label for="message" data-i18n="contact.message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Tell me about your project..." data-i18n-placeholder="contact.messagePlaceholder" required></textarea>
+            </div>
+            <button class="btn btn-primary btn-submit" type="submit">
+              <span data-i18n="contact.send">Send Message</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+            <p class="form-note" data-i18n="contact.formNote">This demo opens your email client with a pre-filled message.</p>
+            <div class="form-status" id="formStatus" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-wrap">
+      <p>© <span id="currentYear"></span> Hussien Mohamed Hussien.</p>
+      <a href="#home" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></a>
+      <p data-i18n="footer.role">Front-End Developer & AI Enthusiast</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
